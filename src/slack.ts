@@ -88,9 +88,9 @@ export class Slack {
     const tmpText = `${jobName} ${blockStatus.result}`;
     const text =
       mention && Slack.isMention(mentionCondition, status)
-        ? ['all', 'here', 'channel'].indexOf(mention) > -1 ?
-          `<!${mention}> ${tmpText}`
-          : `<${mention}> ${tmpText}`
+        ? (['all', 'here', 'channel'].indexOf(mention) > -1 
+          ? `<!${mention}> ${tmpText}`
+          : `<${mention}> ${tmpText}`)
         : tmpText;
     const baseBlock = {
       type: 'section',
